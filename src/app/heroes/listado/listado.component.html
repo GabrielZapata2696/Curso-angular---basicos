@@ -1,0 +1,23 @@
+<h3>Liga de la justicia</h3>
+
+
+<ul>
+  <li *ngFor="let heroe of heroes; let i = index">{{i+1}} - {{heroe}}
+    <button (click)="borrarHeroe(heroe)">Borrar</button>
+  </li>
+</ul>
+
+
+
+<div *ngIf="heroesRetirados.length > 0; else noBorrado">
+  <h3>Heroes retirados</h3>
+  <ul>
+    <li *ngFor="let retirado of heroesRetirados; let i=index">{{i+1}} - {{retirado}}
+      <button (click)="reincorporar(retirado)">Reincorporar</button>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noBorrado>
+  <h3>Sin novedades</h3>
+</ng-template>
